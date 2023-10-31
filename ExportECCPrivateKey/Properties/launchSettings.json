@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ExportECCPrivateKey": {
+      "commandName": "Project",
+      "commandLineArgs": "MyPersonalECC Pa$$w0rd"
+    }
+  }
+}
