@@ -59,10 +59,10 @@ def importEccPrivateKeyFromKeyFile(filename, password):
     return myEccKey
 
 if __name__ == '__main__':
-#    myEccKey = constructEccKeyFromPrivateKey('AE176B08B19CC8AAF0B12BB290A651B804330B6800B6C3BA3174F81D9FCF70A7')
-    myEccKey = importEccPrivateKeyFromKeyFile('MyPersonalECC.key', 'Pa$$w0rd')
+    myEccKey = constructEccKeyFromPrivateKey('D6BE6E5E2A2E6C1EDE640A5E6068D86A47E90247ABCEF9FE3926042DAE1B9B84')
+#    myEccKey = importEccPrivateKeyFromKeyFile('MyPersonalECC.key', 'Pa$$w0rd')
     sign('MySecret.txt', myEccKey)
-#    myEccKey = constructEccKeyFromPublicKey('EE26584F5E6755D70FA07833EE4036A2EFBB97D8BC22B3C97011730A266A31B9', '24CC48289CEDC6D5861B7339283FE6680E0B79D5F635BF7588D4166DBDD18EB9')
-    myEccKey = importEccPublicKeyFromCertificate('MyPersonalECC.cer')
+    myEccKey = constructEccKeyFromPublicKey('889AD76D433D4CA2DE1149FC8A6BE24AECDC5A9B139888246B42522B9A1A3EBD', 'EBDCC71372805673AC00EFEA95F06C6A45BA48F6C40D488B8BEF9B5B4DED1657')
+#    myEccKey = importEccPublicKeyFromCertificate('MyPersonalECC.cer')
     verifySignature('MySecret.txt', myEccKey, 'MySecret.txt.signature')
 
