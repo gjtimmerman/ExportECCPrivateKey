@@ -30,7 +30,7 @@ namespace ExportECCPrivateKey
                 fileStream.Write(myPrivateKeyBytes, 0, myPrivateKeyBytes.Length);
                 fileStream.Close();
                 ECDsa importedPrivateKey = ECDsa.Create();
-                importedPrivateKey.ImportEncryptedPkcs8PrivateKey(args[1], myPrivateKeyBytes, out int bytesRead);
+                importedPrivateKey.ImportEncryptedPkcs8PrivateKey(passwordBytes, myPrivateKeyBytes, out int bytesRead);
                 ECParameters myECParameters = importedPrivateKey.ExportParameters(true);
                 Console.WriteLine("Private Key:");
                 for (int i = 0; i < myECParameters.D?.Length; i++)
